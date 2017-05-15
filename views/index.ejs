@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script
+            src="https://code.jquery.com/jquery-3.2.1.min.js"
+            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+            crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <h1>Captora</h1>
+    <p>Welcome to Widget testing code </p>
+    <div id="cdm"></div>
+    <script>
+        $(function () {
+        var obj= {
+            curr_url: "https://www.zuora.com/billing-topics/affiliate-revenue-model-example"
+        }
+        var jqxhr = $.post( "http://localhost:2000/cpwidget", obj,function(data) {
+            $('#cdm').html(data);
+
+        })
+            .done(function(data) {
+
+            })
+            .fail(function(error) {
+            })
+            .always(function(data) {
+                $('#cdm').html(data);
+            });
+        })
+    </script>
+  </body>
+</html>
